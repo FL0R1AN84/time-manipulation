@@ -1,30 +1,14 @@
-class Duration {
-  private _hours: number;
-  private _minutes: number;
+import moment from 'moment';
 
-  constructor(hours: number, minutes: number) {
-    this._hours = hours;
-    this._minutes = minutes;
-  }
+function getDuration(start: Date, end: Date): string {
+  const duration = moment.duration(moment(end).diff(moment(start)));
+  const hours = duration.hours();
+  const minutes = duration.hours() >= 6 ? + 30 : duration.minutes();
 
-  get hours(): number {
-    return this._hours;
-  }
-
-  get minutes(): number {
-    return this._minutes;
-  }
-
-  get totalMinutes(): number {
-    return this._hours * 60 + this._minutes;
-  }
-
-  get totalHours(): number {
-    return this._hours + this._minutes / 60;
-  }
+  return `${hours}h ${minutes}min`;
 }
 
 // Example usage
-const duration = new Duration(2, 30);
-console.log(duration.totalMinutes); // 150
-console.log(duration.totalHours); // 2.5
+const start = new Date();
+const end = new Date(Date.now() + (6 * 60 * 60 * 1000));
+console.log(getDuration(start, end));
