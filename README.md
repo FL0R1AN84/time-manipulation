@@ -1,6 +1,6 @@
 # Day.js
 
-```
+``` typescript
 import dayjs from 'dayjs';
 
 function getDuration(start: Date, end: Date): string {
