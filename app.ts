@@ -1,30 +1,14 @@
-class Duration {
-  private _hours: number;
-  private _minutes: number;
+import dayjs from 'dayjs';
 
-  constructor(hours: number, minutes: number) {
-    this._hours = hours;
-    this._minutes = minutes;
-  }
+function getDuration(start: Date, end: Date): string {
+  const duration = dayjs(end).diff(dayjs(start), 'minute');
+  const hours = Math.floor(duration / 60);
+  const minutes = hours >= 6 ? + 30 : duration % 60;
 
-  get hours(): number {
-    return this._hours;
-  }
-
-  get minutes(): number {
-    return this._minutes;
-  }
-
-  get totalMinutes(): number {
-    return this._hours * 60 + this._minutes;
-  }
-
-  get totalHours(): number {
-    return this._hours + this._minutes / 60;
-  }
+  return `${hours}h ${minutes}min`;
 }
 
 // Example usage
-const duration = new Duration(2, 30);
-console.log(duration.totalMinutes); // 150
-console.log(duration.totalHours); // 2.5
+const start = new Date();
+const end = new Date(Date.now() + (6 * 60 * 60 * 1000));
+console.log(getDuration(start, end));
