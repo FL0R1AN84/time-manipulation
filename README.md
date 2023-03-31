@@ -1,6 +1,6 @@
 # TypeScript
 
-```
+``` typescript
 class Duration {
   private _hours: number;
   private _minutes: number;
