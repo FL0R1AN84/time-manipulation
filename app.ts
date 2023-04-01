@@ -25,6 +25,11 @@ class Duration {
 }
 
 // Example usage
-const duration = new Duration(2, 30);
-console.log(duration.totalMinutes); // 150
-console.log(duration.totalHours); // 2.5
+const duration = new Duration(6, 0);
+console.log(duration.totalHours); // 6
+console.log(duration.totalMinutes); // 360
+
+const addPauseTimeInHours = duration.totalHours >= 6 ? duration.totalHours + .5 : duration.totalHours;
+const addPauseTimeInMinutes = duration.totalMinutes >= 360 ? duration.totalMinutes + 30 : duration.totalMinutes;
+console.log(addPauseTimeInHours); // 6.5
+console.log(addPauseTimeInMinutes); // 390
