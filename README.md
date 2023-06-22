@@ -1,6 +1,6 @@
 # TypeScript
 
-``` typescript
+```typescript
 class Duration {
   private _hours: number;
   private _minutes: number;
@@ -36,5 +36,12 @@ const addPauseTimeInHours = duration.totalHours >= 6 ? duration.totalHours + .5 
 const addPauseTimeInMinutes = duration.totalMinutes >= 360 ? duration.totalMinutes + 30 : duration.totalMinutes;
 console.log(addPauseTimeInHours); // 6.5
 console.log(addPauseTimeInMinutes); // 390
-
 ```
+
+## Examples
+
+[TypeScript](https://github.com/FL0R1AN84/date-manipulation/tree/main)
+
+[day.js](https://github.com/FL0R1AN84/date-manipulation/tree/day.js)
+
+[moment.js](https://github.com/FL0R1AN84/date-manipulation/tree/moment.js)
