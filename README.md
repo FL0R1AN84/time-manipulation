@@ -16,3 +16,11 @@ const start = new Date();
 const end = new Date(Date.now() + (6 * 60 * 60 * 1000));
 console.log(getDuration(start, end));
 ```
+
+## Examples
+
+[TypeScript](https://github.com/FL0R1AN84/date-manipulation/tree/main)
+
+[day.js](https://github.com/FL0R1AN84/date-manipulation/tree/day.js)
+
+[moment.js](https://github.com/FL0R1AN84/date-manipulation/tree/moment.js)
