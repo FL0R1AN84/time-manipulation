@@ -13,7 +13,7 @@ function getDuration(start: Date, end: Date): string {
 
 // Example usage
 const start = new Date();
-const end = new Date(Date.now() + (6 *60* 60 * 1000));
+const end = new Date(Date.now() + (6 * 60 * 60 * 1000));
 console.log(getDuration(start, end));
 ```
 
